@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showTabContant(i = 0) {
-    tabContent[i].style.display = 'block';
+    tabContent[i].classList.add('show');
     tabHeaderItems[i].classList.add('tabheader__item_active');
   }
 
