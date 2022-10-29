@@ -108,23 +108,29 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.overflow='hidden';//stop move scrol site
 
         });
-    })
+    });
     
-    modalCloseBtn.addEventListener('click', () => {
+    function closeModal() {
         modal.classList.add('hide');
         modal.classList.remove('show');
         // modal.classList.toggle('show');
         document.body.style.overflow='';//move scrol site
-
+    }
+    
+    modalCloseBtn.addEventListener('click', () => {
+        closeModal();
     });
 
-    modal.addEventListener('click', (event) => {
-        if(event.target === modal) {
-            modal.classList.add('hide');
-            modal.classList.remove('show');
-            // modal.classList.toggle('show');
-            document.body.style.overflow='';//move scrol site
+    modal.addEventListener('click', (e) => {
+        if(e.target === modal) {
+            closeModal();
         }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if(e.code === 'Escape') {
+            closeModal();
+        };
     });
 //========modal_window============
 
