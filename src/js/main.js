@@ -102,17 +102,23 @@ document.addEventListener("DOMContentLoaded", () => {
     
     modalTrigger.forEach((item) => {
         item.addEventListener('click', () => {
-        modal.classList.add('show');
-        modal.classList.remove('hide');
-    });
+            // modal.classList.add('show');
+            // modal.classList.remove('hide');
+            modal.classList.toggle('show');
+            document.body.style.overflow='hidden';//stop move scrol site
 
-        
+        });
     })
+    
     modalCloseBtn.addEventListener('click', () => {
-        modal.classList.add('hide');
-        modal.classList.remove('show');
+        // modal.classList.add('hide');
+        // modal.classList.remove('show');
+        modal.classList.toggle('show');
+        document.body.style.overflow='';//move scrol site
+
     });
 //========modal_window============
+
 });
 
 
