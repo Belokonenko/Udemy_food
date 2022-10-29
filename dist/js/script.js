@@ -179,8 +179,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  setClock('.timer', deadline);
-}); //========/date============
+  setClock('.timer', deadline); //========/date============
+  //========modal_window============
+
+  const modalTrigger = document.querySelector('[data-modal]');
+  const modal = document.querySelector('.modal');
+  const modalCloseBtn = document.querySelector('[data-close]');
+  modalTrigger.addEventListener('click', () => {
+    console.log("datammodal");
+    modal.classList.add('show');
+    modal.classList.remove('hide');
+  });
+  modalCloseBtn.addEventListener('click', () => {
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+  }); //========modal_window============
+});
 
 /***/ })
 

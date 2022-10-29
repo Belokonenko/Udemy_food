@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function setClock(selector, endtime) {
 
         const timer = document.querySelector(selector),
-            days = timer.querySelector("#days"),
-            hours = timer.querySelector('#hours'),
+            days    = timer.querySelector("#days"),
+            hours   = timer.querySelector('#hours'),
             minutes = timer.querySelector('#minutes'),
             seconds = timer.querySelector('#seconds'),
             timeInterval = setInterval(updateClock, 1000);
@@ -92,7 +92,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    setClock('.timer', deadline);});
-
+    setClock('.timer', deadline);
 //========/date============
+
+//========modal_window============
+    const modalTrigger = document.querySelector('[data-modal]');
+    const modal = document.querySelector('.modal');
+    const modalCloseBtn = document.querySelector('[data-close]');
+    modalTrigger.addEventListener('click', () => {
+        console.log("datammodal");
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+    });
+
+    modalCloseBtn.addEventListener('click', () => {
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+    });
+            
+
+//========modal_window============
+});
+
 
