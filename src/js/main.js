@@ -102,13 +102,16 @@ document.addEventListener("DOMContentLoaded", () => {
     
     modalTrigger.forEach((item) => {
         item.addEventListener('click', () => {
+            openModal();
+        });
+    });
+    
+    function openModal() {
             modal.classList.add('show');
             modal.classList.remove('hide');
             // modal.classList.toggle('show');
             document.body.style.overflow='hidden';//stop move scrol site
-
-        });
-    });
+    }
     
     function closeModal() {
         modal.classList.add('hide');
@@ -128,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener('keydown', (e) => {
-        if(e.code === 'Escape') {
+            if(e.code === 'Escape' && modal.classList.contains('show')) {
             closeModal();
         };
     });
