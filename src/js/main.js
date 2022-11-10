@@ -151,12 +151,13 @@ document.addEventListener("DOMContentLoaded", () => {
 //========class for card============
     
     class MenuCard {
-        constructor(src, alt, title, description, price, parenSelector) {
+        constructor(src, alt, title, description, price, parenSelector, ...classes) {
             this.src = src;
             this.alt = alt;
             this.title = title;
             this.description = description;
             this.price = price;
+            this.classes = classes;
             this.transfer = 27;
             this.parent = document.querySelector(parenSelector);
             this.cangeToUa();
@@ -169,8 +170,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         render() {
             const element = document.createElement("div");
+            
+            if(this.classes.length === 0)  {
+                this.classes.push("menu__item",);
+            }
 
-            element.classList.add("menu__item");
+            this.classes.forEach((className) => {
+                element.classList.add(className)
+            })
             
             element.innerHTML = `
                     <img src=${this.src} alt=${this.alt}>
